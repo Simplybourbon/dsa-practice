@@ -1,6 +1,5 @@
 package Collections;
 
-import java.util.HashSet;
 import java.util.*;
 
 public class hashset {
