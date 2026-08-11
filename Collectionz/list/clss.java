@@ -1,4 +1,4 @@
-package Collections;
+package Collectionz.list;
 
 class Person {
     private String name;
