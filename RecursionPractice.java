@@ -1,27 +1,25 @@
 public class RecursionPractice {
-
-    public void printNum(int i, int num) {
-        if (num < i) {
+    public static void reverseArray(int[] arr, int i, int n) {
+        if (i >= n / 2) {
             return;
         }
-
-        printNum(i+1, num);
-        System.out.println(i);
+        int temp = arr[i];
+        arr[i] = arr[(n - 1) - i];
+        arr[(n - 1) - i] = temp;
+        reverseArray(arr, i + 1, n);
     }
 
     public static void main(String[] args) {
-        RecursionPractice t1 = new RecursionPractice();
-        t1.printNum(1, 5);
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int n = arr.length;
+        reverseArray(arr, 0, n);
+        System.out.print("[ ");
 
-    }
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + ", ");
 
-    public static void printName(int count) {
-        if (count == 0) {
-            return;
         }
-
-        count--;
-        printName(count);
-        System.out.println((count + 1) + ". rabin");
+        System.out.print("]");
     }
+
 }
