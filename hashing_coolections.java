@@ -9,6 +9,7 @@ public class hashing_coolections {
         HashMap<Integer, Integer> hm = new HashMap<>();
         System.out.print("enter number size : ");
         int n = sc.nextInt();
+        
 
         sc.nextLine();
         int[] arr = new int[n];
