@@ -1,32 +1,39 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class LargestElement {
+public class SecondLargest {
     public static void main(String[] args) {
         int arr[] = { 13, 45, 24, 52, 20, 9 };
-        System.out.println(largest(arr));
-
+        int ar[]={10,10,10};
+        System.out.println(secondLargest(ar));
     }
 
-    // Optimal method
-    public static int largest(int[] arr) {
+    // Optimal Approcah
+    static int secondLargest(int[] arr) {
         int largest = arr[0];
+        int secondLargest = -1;
         if (arr.length <= 1) {
             return -1;
         }
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > largest) {
+                secondLargest = largest;
                 largest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] != largest) {
+                secondLargest = arr[i];
+
             }
         }
-        return largest;
+        if (secondLargest == 1) {
+            return -1;
+        }
+        return secondLargest;
     }
 
     // BruteForce method
-    public static int largestElement(int[] arr) {
+    static int secondlargestElement(int[] arr) {
         int n = arr.length;
         sort(arr, 0, arr.length - 1);
-        return arr[n - 1];
+        return arr[n - 2];
     }
 
     static int[] sort(int arr[], int low, int high) {
